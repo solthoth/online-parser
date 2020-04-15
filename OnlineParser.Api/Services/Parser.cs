@@ -4,6 +4,7 @@
     { 
     }
 
-    public class Parser : Parser
-    { }
+    public class Parser : IParser
+    { 
+    }
 }

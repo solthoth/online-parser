@@ -6,9 +6,9 @@ namespace OnlineParser.Api.Controllers
     [ApiController]
     public class ParserController : ControllerBase
     {
-        private readonly ParserService _service;
+        private readonly IParserService _service;
 
-        public ParserController(ParserService service)
+        public ParserController(IParserService service)
         {
             _service = service;
         }
@@ -16,7 +16,12 @@ namespace OnlineParser.Api.Controllers
         [HttpGet]
         public IActionResult Get(string url)
         {
-            return BadRequest();
+            var content = _service.Parse(url);
+            if (string.IsNullOrEmpty(content))
+            {
+                return BadRequest();
+            }
+            return Ok(content);
         }
     }
 }
