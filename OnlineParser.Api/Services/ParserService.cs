@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OnlineParser.Api.Services;
+using System;
 
 namespace OnlineParser.Api.Controllers
 {
@@ -9,9 +10,19 @@ namespace OnlineParser.Api.Controllers
 
     public class ParserService
     {
+        private readonly IInvoker _invoker;
+        private readonly IParser _parser;
+
+        public ParserService(IInvoker invoker, IParser parser)
+        {
+            _invoker = invoker;
+            _parser = parser;
+        }
+
         public string Parse(string url)
         {
-            throw new NotImplementedException();
+            var content = _invoker.Get(url);
+            return _parser.Transform(content);
         }
     }
 }

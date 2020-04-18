@@ -7,7 +7,7 @@ using OnlineParser.Api.Controllers;
 
 namespace OnlineParser.Tests.Controllers
 {
-    public class ParserTests
+    public class ParserControllerTests
     {
         private ParserController _parser;
         private IParserService _service;
