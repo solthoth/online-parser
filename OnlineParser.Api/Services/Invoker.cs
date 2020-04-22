@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestSharp;
+using System;
 
 namespace OnlineParser.Api.Controllers
 {
@@ -9,11 +10,22 @@ namespace OnlineParser.Api.Controllers
 
     public class Invoker : IInvoker
     {
+        private readonly IRestClient _restClient;
+
+        public Invoker(IRestClient restClient)
+        {
+            _restClient = restClient;
+        }
+
         public string Get(string url)
         {
-            //TODO: Make web request call
-            //TODO: Return conten
-            throw new NotImplementedException();
+            return GetWebRequest(url);
+        }
+
+        private string GetWebRequest(string url)
+        {
+            var request = new RestRequest(url);
+            return _restClient.Get(request).Content;
         }
     }
 }

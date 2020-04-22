@@ -22,7 +22,7 @@ namespace OnlineParser.Api.Controllers
         public string Parse(string url)
         {
             var content = _invoker.Get(url);
-            return _parser.Transform(content);
+            return _parser.Transform(url, content);
         }
     }
 }

@@ -26,7 +26,7 @@ namespace OnlineParser.Tests
         {
             //Arrange
             var url = "http://www.solthoth.com/dev-test.html";
-            _parser.Transform("").ReturnsForAnyArgs("TEST");
+            _parser.Transform("","").ReturnsForAnyArgs("TEST");
 
             //ACT
             var content = _service.Parse(url);//SUT
