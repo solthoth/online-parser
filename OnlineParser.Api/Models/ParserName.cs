@@ -1,6 +1,6 @@
 ﻿namespace OnlineParser.Api.Models
 {
-    public enum ParserName : byte
+    public enum ParserType : byte
     {
         Unknown,
         NowInStock

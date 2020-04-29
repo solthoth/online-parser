@@ -4,7 +4,7 @@ using NUnit.Framework;
 using OnlineParser.Api.Controllers;
 using OnlineParser.Api.Services;
 
-namespace OnlineParser.Tests
+namespace OnlineParser.Tests.UnitTests.Services
 {
     [TestFixture]
     public class ParserServiceTests

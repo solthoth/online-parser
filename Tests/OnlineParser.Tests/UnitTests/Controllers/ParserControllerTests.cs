@@ -1,11 +1,10 @@
 ﻿using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
-using NHibernate.Mapping;
 using NSubstitute;
 using NUnit.Framework;
 using OnlineParser.Api.Controllers;
 
-namespace OnlineParser.Tests.Controllers
+namespace OnlineParser.Tests.UnitTests.Controllers
 {
     public class ParserControllerTests
     {

@@ -1,13 +1,12 @@
 ﻿using FluentAssertions;
 using NUnit.Framework;
 using OnlineParser.Api.Controllers;
-using System;
-using NSubstitute;
 using RestSharp;
+using System;
 
-namespace OnlineParser.Tests
+namespace OnlineParser.Tests.IntegrationTests.Services
 {
-    [TestFixture]
+    [TestFixture(Category = "Integration")]
     public class InvokerTests
     {
         private Invoker _service;
@@ -16,7 +15,7 @@ namespace OnlineParser.Tests
         [SetUp]
         public void Setup()
         {
-            _client = Substitute.For<IRestClient>();
+            _client = new RestClient();
             _service = new Invoker(_client);
         }
 
